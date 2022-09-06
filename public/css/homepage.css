@@ -1,0 +1,25 @@
+.chat-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.message {
+    margin-top: 30px;
+    margin-right: 2px;
+    margin-left: 2px;
+    min-height: 50px;
+    padding: 15px;
+    max-width: 250px;
+    flex-basis: 100%;
+}
+
+.message-received {
+    background-image: linear-gradient(to top left, #F5E3E6, #D9E4F5);
+    border-radius: 0px 10px 10px 10px;
+}
+
+.message-sent {
+    background-image: linear-gradient(to bottom right, #daf8fb, #61cfff);
+    border-radius: 10px 10px 0px 10px;
+}

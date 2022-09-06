@@ -1,0 +1,20 @@
+{%extends 'base.html.twig'%}
+    {% block stylesheets %}
+        <link rel="stylesheet" href="{{ asset('css/homepage.css') }}" media="all">
+        {{ parent() }}
+    {% endblock %}
+    {% block content %}
+        <div class="chat-box">
+            <div class="message message-received">
+                <p>
+                    Hey there im the holiday chat agent bot :D
+                </p>
+            </div>
+            <div class="message message-sent">
+                <p>
+                    Nice to meet you oeithjgoiehjt
+                </p>
+            </div>
+        </div>
+    {% endblock %}
+
