@@ -1,3 +1,7 @@
 home:
     path: /
     controller: App\Controller\HomePageController::home
+
+holidays:
+    path: /holidays
+    controller: App\Database\HolidayData::fetch

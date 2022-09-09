@@ -1,25 +1,72 @@
 .chat-box {
-    display: flex;
+    display: grid;
     justify-content: center;
     align-items: center;
+    margin-right: 30%;
+    margin-left: 30%;
+    padding: 30px;
+    overflow: scroll;
 }
 
 .message {
-    margin-top: 30px;
-    margin-right: 2px;
-    margin-left: 2px;
     min-height: 50px;
     padding: 15px;
-    max-width: 250px;
-    flex-basis: 100%;
+    max-width: 300px;
+    margin-bottom: 15px;
+    margin-top: 15px;
+    min-width : 100px;
+}
+
+.message-container {
+    margin-right: 2px;
+    margin-left: 2px;
 }
 
 .message-received {
     background-image: linear-gradient(to top left, #F5E3E6, #D9E4F5);
     border-radius: 0px 10px 10px 10px;
+    float: left;
 }
 
 .message-sent {
+    display: none;
     background-image: linear-gradient(to bottom right, #daf8fb, #61cfff);
     border-radius: 10px 10px 0px 10px;
+    float: right;
+}
+
+.response-button {
+    background: transparent;
+    border: var(--theme-blue) solid 2px;
+    border-radius: 5px;
+    display: table-cell;
+    margin: 30px 5px 0px 5px;
+    min-width: 25%;
+    padding: 5px 2px 5px 2px;
+}
+
+.response-button-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+}
+
+.holidayResultTable {
+    display: none;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 5px;
+    text-align: center;
+    padding: 5px;
+    background-image: linear-gradient(to top left, #F5E3E6, #D9E4F5);
+}
+
+.holidayResultTable th {
+    color: var(--theme-purple);
+    font-weight: normal;
+    padding: 0px 10px 0px 10px;
+}
+
+.holidayResultTable td {
+    color: var(--theme-blue)
 }

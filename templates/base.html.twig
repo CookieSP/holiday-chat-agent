@@ -9,18 +9,23 @@
             {{ encore_entry_link_tags('app') }}
             <link rel="stylesheet" href="{{ asset('css/base.css') }}" media="all">
         {% endblock %}
-
-        {% block javascripts %}
-            {{ encore_entry_script_tags('app') }}
-        {% endblock %}
     </head>
     <body>
         {% block body %}
             <div class="nav-center">
                 <h1>First Holidays</h1>
                 <h2>Chat Agent Bot</h2>
+                <div id="msgid">
+                </div>
             </div>
         {% endblock %}
     </body>
     {% block content %}{% endblock %}
+    {% block javascripts %}
+        {{ encore_entry_script_tags('app') }}
+        <script src="https://code.jquery.com/jquery-3.6.1.min.js"
+                integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
+                crossorigin="anonymous">
+        </script>
+    {% endblock %}
 </html>

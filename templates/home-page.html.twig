@@ -5,16 +5,69 @@
     {% endblock %}
     {% block content %}
         <div class="chat-box">
-            <div class="message message-received">
-                <p>
-                    Hey there im the holiday chat agent bot :D
-                </p>
+            <div class="message-container">
+                <div class="message message-received">
+                    <p>Hi there, I'm the holiday chatbot! I'm going to find you the best holiday you want, based on your response.</p>
+                    <p>So lets get started shall we...</p>
+                </div>
             </div>
-            <div class="message message-sent">
-                <p>
-                    Nice to meet you oeithjgoiehjt
-                </p>
+            <div class="message-container">
+                <div class="message message-received">
+                    <p>What climate would you prefer?</p>
+                </div>
             </div>
+            <div class="message-container">
+                <div class=" response-button-container" id="climate-buttons">
+                        <button class="response-button">Hot</button>
+                        <button class="response-button">Mild</button>
+                        <button class="response-button">Cold</button>
+                </div>
+            </div>
+            <div class="message-container">
+                <div class="message message-sent" id="message-climate-response">
+                        <p id="climateMessage"></p>
+                </div>
+            </div>
+            <div>
+                <div class="message-container">
+                    <div class="message message-received">
+                        <p>Awesome, what hotel rating do you desire?</p>
+                    </div>
+                </div>
+                <div class="message-container">
+                    <div class=" response-button-container" id="rating-buttons">
+                        <button class="response-button" data-rating="3" >&#9733; &#9733; &#9733;</button>
+                        <button class="response-button" data-rating="4">&#9733; &#9733; &#9733; &#9733;</button>
+                        <button class="response-button" data-rating="5">&#9733; &#9733; &#9733; &#9733; &#9733;</button>
+                    </div>
+                </div>
+                <div class="message-container">
+                    <div class="message message-sent" id="message-rating-response">
+                        <p id="ratingMessage"></p>
+                    </div>
+                </div>
+            </div>
+            <button class="response-button" type="submit" id="findHolidayBtn">Find your holiday!</button>
         </div>
+        <table class="holidayResultTable ">
+            <tr>
+                <th>HolidayReference</th>
+                <th>HotelName</th>
+                <th>City</th>
+                <th>Continent</th>
+                <th>Country</th>
+                <th>Category</th>
+                <th>StarRating</th>
+                <th>TempRating</th>
+                <th>Location</th>
+                <th>Price Per Night</th>
+            </tr>
+            <tbody id="results-table">
+            </tbody>
+        </table>
+    {% endblock %}
+    {% block javascripts %}
+        {{ parent() }}
+        <script type="text/javascript" src="{{ asset('js/getHolidayData.js') }}"></script>
     {% endblock %}
 
