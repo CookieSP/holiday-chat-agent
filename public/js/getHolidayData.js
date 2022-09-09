@@ -26,7 +26,6 @@ $(document).ready(function() {
             url: "/holidays?climate="+climateResponse+"&rating="+ratingResponse,
             type: "GET",
             success: function (response) {
-                console.log(!response[0].length)
                 if(!response[0].length === true){
                     alert("Sorry our current holidays do not match your preferences! Please try again with different answers")
                     document.location.reload(true)
