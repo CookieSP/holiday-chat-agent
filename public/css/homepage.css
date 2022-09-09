@@ -70,3 +70,7 @@
 .holidayResultTable td {
     color: var(--theme-blue)
 }
+
+.second-question {
+    display: none
+}

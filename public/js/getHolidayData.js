@@ -8,6 +8,7 @@ $(document).ready(function() {
         let climateMessage = document.getElementById('climateMessage')
         climateMessage.innerHTML = climateResponse
         $("#message-climate-response").css("display", "block")
+        $(".second-question").css("display", "block")
 
     });
     $('#rating-buttons').on('click','button', function (evt) {
@@ -25,8 +26,14 @@ $(document).ready(function() {
             url: "/holidays?climate="+climateResponse+"&rating="+ratingResponse,
             type: "GET",
             success: function (response) {
+                console.log(!response[0].length)
+                if(!response[0].length === true){
+                    alert("Sorry our current holidays do not match your preferences! Please try again with different answers")
+                    document.location.reload(true)
+                }
                 buildTable(response)
                 $("#findHolidayBtn").css("display", "none")
+
             },
             error: function (xhr) {
                 console.log(error);
@@ -37,7 +44,6 @@ $(document).ready(function() {
 
 function buildTable(data) {
     $(".holidayResultTable").css("display", "table")
-
     for (var i = 0; i < data.length; i++) {
         for (var x = 0; x < data[i].length; x++) {
             var row = `<tr>
